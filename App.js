@@ -1,4 +1,5 @@
 // import { StatusBar } from 'expo-status-bar';
+import 'react-native-gesture-handler';
 import 'expo-dev-client';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -7,10 +8,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Home from './screens/Home'
 import LoginForm from './screens/loginForm';
 import AddMateriel from './screens/materiel/AddMateriel';
-import FormMateriel from './screens/formMateriel';
+import FormMateriel from './screens/materiel/formMateriel';
 import ForgetPasswordScreen from './screens/forgetpassword';
 import Dashboard from './screens/Dashboard';
-import MaterielListScreen from './screens/MaterielListScreen';
+import MaterielListScreen from './screens/materiel/MaterielListScreen';
 // import DetailMaterielScreen from './screens/DetailMaterielScreen';
 const Stack = createStackNavigator();
 export default function App() {

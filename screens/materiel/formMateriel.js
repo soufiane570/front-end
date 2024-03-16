@@ -52,7 +52,7 @@ const FormMateriel = ({route}) => {
   };
   return (
     <View style={styles.container}>
-      <Image source={require('./assets/6HwhfW-LogoMakr.png')} style={styles.logo} />
+      <Image source={require('../assets/6HwhfW-LogoMakr.png')} style={styles.logo} />
       <ScrollView style={styles.formContainer}>
         {error ? <Text style={styles.error}>{error}</Text> : null}
         <Text style={styles.label}>Code Barre:</Text>

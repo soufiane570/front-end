@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet ,Image} from 'react-native';
 
 const ForgetPasswordScreen = () => {
   const [emailOrNumber, setEmailOrNumber] = useState('');
@@ -31,7 +31,7 @@ const ForgetPasswordScreen = () => {
         value={emailOrNumber}
         onChangeText={setEmailOrNumber}
       />
-      <Button title="Recover Password" onPress={handleRecoverPassword} />
+      <Button style={styles.button} title="Recover Password" onPress={handleRecoverPassword} />
       {message ? <Text style={styles.message}>{message}</Text> : null}
     </View>
   );
@@ -60,6 +60,13 @@ const styles = StyleSheet.create({
   message: {
     marginTop: 20,
     color: 'green',
+  },
+  button: {
+    backgroundColor: 'blue',
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderRadius: 15,
+    marginBottom: 20,
   },
 });
 
