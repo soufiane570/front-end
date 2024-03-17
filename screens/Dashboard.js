@@ -5,6 +5,9 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import MaterielListScreen from './materiel/MaterielListScreen';
 import BackButton from './components/BackButton';
 import AddMateriel from './materiel/AddMateriel';
+import PersonelScreen from './personel/personelScreen';
+import CategoriesScreen from './Categories/CategoriesScreen';
+import HistoriquePanneScreen from './panne/HistoriquePanneScreen'
 
 export default function Dashboard({navigation}) {
   const Drawer = createDrawerNavigator();
@@ -22,50 +25,107 @@ export default function Dashboard({navigation}) {
         );
         return true;
       };
-
       const backHandler = BackHandler.addEventListener('hardwareBackPress', handleBackPress);
-
       return () => {
         backHandler.remove();
       };
     }, [])
   );
-  // const MaterielList = () => {
-  //   navigation.navigate('MaterielListScreen');
-  // };
-
   return (
     <Drawer.Navigator >
             <Drawer.Screen
-                name="Liste Materiel"
-                component={MaterielListScreen}
-                options={({ navigation }) => ({
-                    headerRight: () => (
-                        <>
-                        {/* <BackButton goBack={navigation.goBack} /> */}
-                        {/* <NotificationButton not={()=>{navigation.navigate('notification')}}/> */}
-                        </>
-                    ),
-                })}
+                name="Personel"
+                component={PersonelScreen}
             />
             <Drawer.Screen
-                name="Ajouter un materiel"
-                component={AddMateriel}
+                name="Catégorie de matériel"
+                component={CategoriesScreen}
                 options={({ navigation }) => ({
                     headerRight: () => (
                         <>
                         <BackButton goBack={navigation.goBack} />
-                        {/* <NotificationButton not={()=>{navigation.navigate('notification')}}/> */}
                         </>
                     ),
-                    
+                })}
+            />
+            <Drawer.Screen
+            name="Liste Materiel"
+            component={MaterielListScreen}
+                options={({ navigation }) => ({
+                    headerRight: () => (
+                        <>
+                        <BackButton goBack={navigation.goBack} />
+                        </>
+                    ),
+                })}
+            />
+            <Drawer.Screen
+                name="Historique de panne"
+                component={HistoriquePanneScreen}
+                options={({ navigation }) => ({
+                    headerRight: () => (
+                        <>
+                        <BackButton goBack={navigation.goBack} />
+                        </>
+                    ),
+                })}
+            />
+            <Drawer.Screen
+                name="Prise en charge"
+                component={MaterielListScreen}
+                options={({ navigation }) => ({
+                    headerRight: () => (
+                        <>
+                        <BackButton goBack={navigation.goBack} />
+                        </>
+                    ),
+                })}
+            />
+            <Drawer.Screen
+                name="Local"
+                component={MaterielListScreen}
+                options={({ navigation }) => ({
+                    headerRight: () => (
+                        <>
+                        <BackButton goBack={navigation.goBack} />
+                        </>
+                    ),
+                })}
+            />
+            <Drawer.Screen
+                name="Transfert"
+                component={MaterielListScreen}
+                options={({ navigation }) => ({
+                    headerRight: () => (
+                        <>
+                        <BackButton goBack={navigation.goBack} />
+                        </>
+                    ),
+                })}
+            />
+            <Drawer.Screen
+                name="Signer"
+                component={MaterielListScreen}
+                options={({ navigation }) => ({
+                    headerRight: () => (
+                        <>
+                        <BackButton goBack={navigation.goBack} />
+                        </>
+                    ),
+                })}
+            />
+            <Drawer.Screen
+                name="Dépanner"
+                component={MaterielListScreen}
+                options={({ navigation }) => ({
+                    headerRight: () => (
+                        <>
+                        <BackButton goBack={navigation.goBack} />
+                        </>
+                    ),
                 })}
             />
         </Drawer.Navigator>
-    // <View style={styles.container}>
-    //   <Text > Dashboard</Text>
-    //   <Button title="MaterielList" onPress={MaterielList} />
-    // </View>
   );
 }
 const styles = StyleSheet.create({
